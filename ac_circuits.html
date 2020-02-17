@@ -1,0 +1,1057 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Basic AC Electrical Circuits</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Rahul Martim Juliato" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Basic AC Electrical Circuits</h1>
+<pre class="example">
+
+Valid Inputs are in the form of:
+
+(Modulus ; Angle)
+(Real   , Imaginary)
+
+# C-c C-c over the # formula bellow the table evals this table only
+# C-u C-c C-c evals the entire file
+
+</pre>
+
+<div id="outline-container-orgc9f6d6c" class="outline-2">
+<h2 id="orgc9f6d6c"><span class="section-number-2">1</span> Basic Circuit     - R</h2>
+<div class="outline-text-2" id="text-1">
+<pre class="example">
+ +---------------VVVVV-----+
+ |                 R       |
+ |                         |
+(~)Ut                      |
+ |                         |
+ |                         |
+ +-------------------------+
+</pre>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Ut</th>
+<th scope="col" class="org-right">(220; 0)</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Volt</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">R</th>
+<th scope="col" class="org-right">(120,0)</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Ohm</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">f</th>
+<th scope="col" class="org-right">300</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Hertz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">it</td>
+<td class="org-right">1.83e0</td>
+<td class="org-left">1.83e0</td>
+<td class="org-left">Ampère</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org7ef83d4" class="outline-2">
+<h2 id="org7ef83d4"><span class="section-number-2">2</span> Basic Circuit     - L</h2>
+<div class="outline-text-2" id="text-2">
+<pre class="example">
+ +----------------OOOOO----+
+ |                  L      |
+ |                         |
+(~)Ut                      |
+ |                         |
+ |                         |
+ +-------------------------+
+</pre>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Ut</th>
+<th scope="col" class="org-left">(500; 0)</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Volt</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">L</th>
+<th scope="col" class="org-left">200e-3</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Henry</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">f</th>
+<th scope="col" class="org-left">300</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Hertz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Xl</td>
+<td class="org-left">(0e0, 377e0)</td>
+<td class="org-left">(377e0; 90e0)</td>
+<td class="org-left">Ohm</td>
+</tr>
+
+<tr>
+<td class="org-left">it</td>
+<td class="org-left">(0e0, -1.33e0)</td>
+<td class="org-left">(1.33e0; -90e0)</td>
+<td class="org-left">Ampère</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org03ae738" class="outline-2">
+<h2 id="org03ae738"><span class="section-number-2">3</span> Basic Circuit     - C</h2>
+<div class="outline-text-2" id="text-3">
+<pre class="example">
+ +-----------------|  |----+
+ |                  C      |
+ |                         |
+(~)Ut                      |
+ |                         |
+ |                         |
+ +-------------------------+
+</pre>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Ut</th>
+<th scope="col" class="org-left">(30; 0)</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Volt</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">C</th>
+<th scope="col" class="org-left">1200e-6</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Farad</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">f</th>
+<th scope="col" class="org-left">30</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Hertz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Xc</td>
+<td class="org-left">(0e0, -4.42e0)</td>
+<td class="org-left">(4.42e0; -90e0)</td>
+<td class="org-left">Ohm</td>
+</tr>
+
+<tr>
+<td class="org-left">it</td>
+<td class="org-left">(0e0, 6.79e0)</td>
+<td class="org-left">(6.79e0; 90e0)</td>
+<td class="org-left">Ampère</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org06c8660" class="outline-2">
+<h2 id="org06c8660"><span class="section-number-2">4</span> Series Circuit    - RL</h2>
+<div class="outline-text-2" id="text-4">
+<pre class="example">
+ +------VVVVV-----OOOOO----+
+ |        R         L      |
+ |                         |
+(~)Ut                      |
+ |                         |
+ |                         |
+ +-------------------------+
+</pre>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Ut</th>
+<th scope="col" class="org-left">(500; 0)</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Volt</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">R</th>
+<th scope="col" class="org-left">(55,0)</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Ohm</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">L</th>
+<th scope="col" class="org-left">28e-3</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Henry</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">f</th>
+<th scope="col" class="org-left">300</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Hertz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Xl</td>
+<td class="org-left">(0e0, 52.8e0)</td>
+<td class="org-left">(52.8e0; 90e0)</td>
+<td class="org-left">Ohm</td>
+</tr>
+
+<tr>
+<td class="org-left">Z</td>
+<td class="org-left">(55e0, 52.8e0)</td>
+<td class="org-left">(76.2e0; 43.8e0)</td>
+<td class="org-left">Ohm</td>
+</tr>
+
+<tr>
+<td class="org-left">it</td>
+<td class="org-left">(4.73e0, -4.54e0)</td>
+<td class="org-left">(6.56e0; -43.8e0)</td>
+<td class="org-left">Ampère</td>
+</tr>
+
+<tr>
+<td class="org-left">Ur</td>
+<td class="org-left">(260e0, -250e0)</td>
+<td class="org-left">(361e0; -43.9e0)</td>
+<td class="org-left">Volt</td>
+</tr>
+
+<tr>
+<td class="org-left">Ul</td>
+<td class="org-left">(240e0, 250e0)</td>
+<td class="org-left">(347e0; 46.2e0)</td>
+<td class="org-left">Volt</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org85a8db4" class="outline-2">
+<h2 id="org85a8db4"><span class="section-number-2">5</span> Series Circuit    - RC</h2>
+<div class="outline-text-2" id="text-5">
+<pre class="example">
+ +------VVVVV------|  |----+
+ |        R         C      |
+ |                         |
+(~)Ut                      |
+ |                         |
+ |                         |
+ +-------------------------+
+</pre>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Ut</th>
+<th scope="col" class="org-left">(20; 0)</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Volt</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">R</th>
+<th scope="col" class="org-left">(10,0)</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Ohm</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">C</th>
+<th scope="col" class="org-left">1200e-6</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Farad</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">f</th>
+<th scope="col" class="org-left">25</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Hertz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Xc</td>
+<td class="org-left">(0e0, -5.31e0)</td>
+<td class="org-left">(5.31e0; -90e0)</td>
+<td class="org-left">Ohm</td>
+</tr>
+
+<tr>
+<td class="org-left">Z</td>
+<td class="org-left">(10e0, -5.31e0)</td>
+<td class="org-left">(11.3e0; -28.0e0)</td>
+<td class="org-left">Ohm</td>
+</tr>
+
+<tr>
+<td class="org-left">it</td>
+<td class="org-left">(1.56e0, 828e-3)</td>
+<td class="org-left">(1.77e0; 28.0e0)</td>
+<td class="org-left">Ampère</td>
+</tr>
+
+<tr>
+<td class="org-left">Ur</td>
+<td class="org-left">(15.6e0, 8.28e0)</td>
+<td class="org-left">(17.7e0; 28.0e0)</td>
+<td class="org-left">Volt</td>
+</tr>
+
+<tr>
+<td class="org-left">Uc</td>
+<td class="org-left">(4.40e0, -8.28e0)</td>
+<td class="org-left">(9.38e0; -62.0e0)</td>
+<td class="org-left">Volt</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org5a22481" class="outline-2">
+<h2 id="org5a22481"><span class="section-number-2">6</span> Series Circuit    - RLC</h2>
+<div class="outline-text-2" id="text-6">
+<pre class="example">
+ +------VVVVV---OOOOO---|  |----+
+ |        R       L      C      |
+ |                              |
+(~)Ut                           |
+ |                              |
+ |                              |
+ +------------------------------+
+</pre>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Ut</th>
+<th scope="col" class="org-left">(200; 0)</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Volt</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">R</th>
+<th scope="col" class="org-left">(10,0)</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Ohm</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">L</th>
+<th scope="col" class="org-left">20e-3</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Henry</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">C</th>
+<th scope="col" class="org-left">100e-6</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Farad</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">f</th>
+<th scope="col" class="org-left">300</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Hertz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Xl</td>
+<td class="org-left">(0e0, 37.7e0)</td>
+<td class="org-left">(37.7e0; 90e0)</td>
+<td class="org-left">Ohm</td>
+</tr>
+
+<tr>
+<td class="org-left">Xc</td>
+<td class="org-left">(0e0, -5.31e0)</td>
+<td class="org-left">(5.31e0; -90e0)</td>
+<td class="org-left">Ohm</td>
+</tr>
+
+<tr>
+<td class="org-left">Z</td>
+<td class="org-left">(10e0, 32.4e0)</td>
+<td class="org-left">(33.9e0; 72.8e0)</td>
+<td class="org-left">Ohm</td>
+</tr>
+
+<tr>
+<td class="org-left">it</td>
+<td class="org-left">(1.74e0, -5.64e0)</td>
+<td class="org-left">(5.90e0; -72.9e0)</td>
+<td class="org-left">Ampère</td>
+</tr>
+
+<tr>
+<td class="org-left">Ur</td>
+<td class="org-left">(17.4e0, -56.4e0)</td>
+<td class="org-left">(59.0e0; -72.9e0)</td>
+<td class="org-left">Volt</td>
+</tr>
+
+<tr>
+<td class="org-left">Ul</td>
+<td class="org-left">(213e0, 65.6e0)</td>
+<td class="org-left">(223e0; 17.1e0)</td>
+<td class="org-left">Volt</td>
+</tr>
+
+<tr>
+<td class="org-left">Uc</td>
+<td class="org-left">(-29.9e0, -9.24e0)</td>
+<td class="org-left">(31.3e0; -163e0)</td>
+<td class="org-left">Volt</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgdad0546" class="outline-2">
+<h2 id="orgdad0546"><span class="section-number-2">7</span> Parallel Circuit  - RL</h2>
+<div class="outline-text-2" id="text-7">
+<pre class="example">
+	  L
+ +------OOOOO----+         
+ |               |
+ +------VVVVV----+
+ |        R      |
+ |               |
+(~)Ut            |
+ |               |
+ |               |
+ +---------------+
+</pre>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Ut</th>
+<th scope="col" class="org-left">(20; 0)</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Volt</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">R</th>
+<th scope="col" class="org-left">(10,0)</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Ohm</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">L</th>
+<th scope="col" class="org-left">20e-3</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Henry</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">f</th>
+<th scope="col" class="org-left">15</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Hertz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Xl</td>
+<td class="org-left">(0e0, 1.88e0)</td>
+<td class="org-left">(1.88e0; 90e0)</td>
+<td class="org-left">Ohm</td>
+</tr>
+
+<tr>
+<td class="org-left">Z</td>
+<td class="org-left">(341e-3, 1.82e0)</td>
+<td class="org-left">(1.85e0; 79.4e0)</td>
+<td class="org-left">Ohm</td>
+</tr>
+
+<tr>
+<td class="org-left">it</td>
+<td class="org-left">(1.99e0, -10.6e0)</td>
+<td class="org-left">(10.8e0; -79.4e0)</td>
+<td class="org-left">Ampère</td>
+</tr>
+
+<tr>
+<td class="org-left">ir</td>
+<td class="org-left">2</td>
+<td class="org-left">2</td>
+<td class="org-left">Ampère</td>
+</tr>
+
+<tr>
+<td class="org-left">il</td>
+<td class="org-left">(0e0, -10.6e0)</td>
+<td class="org-left">(10.6e0; -90e0)</td>
+<td class="org-left">Ampère</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org0eb297d" class="outline-2">
+<h2 id="org0eb297d"><span class="section-number-2">8</span> Parallel Circuit  - RC</h2>
+<div class="outline-text-2" id="text-8">
+<pre class="example">
+	   C
+ +--------|  |-----+ 
+ |                 |
+ +------VVVVV------+
+ |        R        |
+ |                 |
+(~)Ut              |
+ |                 |
+ |                 |
+ +-----------------+
+</pre>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Ut</th>
+<th scope="col" class="org-left">(200; 0)</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Volt</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">R</th>
+<th scope="col" class="org-left">(10,0)</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Ohm</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">C</th>
+<th scope="col" class="org-left">100e-6</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Farad</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">f</th>
+<th scope="col" class="org-left">300</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Hertz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Xc</td>
+<td class="org-left">(0e0, -5.31e0)</td>
+<td class="org-left">(5.31e0; -90e0)</td>
+<td class="org-left">Ohm</td>
+</tr>
+
+<tr>
+<td class="org-left">Z</td>
+<td class="org-left">(2.20e0, -4.14e0)</td>
+<td class="org-left">(4.69e0; -62.0e0)</td>
+<td class="org-left">Ohm</td>
+</tr>
+
+<tr>
+<td class="org-left">it</td>
+<td class="org-left">(20.0e0, 37.7e0)</td>
+<td class="org-left">(42.7e0; 62.1e0)</td>
+<td class="org-left">Ampère</td>
+</tr>
+
+<tr>
+<td class="org-left">ir</td>
+<td class="org-left">20</td>
+<td class="org-left">20</td>
+<td class="org-left">Ampère</td>
+</tr>
+
+<tr>
+<td class="org-left">ic</td>
+<td class="org-left">(0e0, 37.7e0)</td>
+<td class="org-left">(37.7e0; 90e0)</td>
+<td class="org-left">Ampère</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgef62513" class="outline-2">
+<h2 id="orgef62513"><span class="section-number-2">9</span> Parallel Circuit  - RLC</h2>
+<div class="outline-text-2" id="text-9">
+<pre class="example">
+       C
+ +-------|  |----+
+ |     L         |
+ +------OOOOO----+         
+ |               |
+ +------VVVVV----+
+ |     R         |
+ |               |
+(~)Ut            |
+ |               |
+ |               |
+ +---------------+
+</pre>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Ut</th>
+<th scope="col" class="org-left">(200; 0)</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Volt</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">R</th>
+<th scope="col" class="org-left">(10,0)</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Ohm</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">L</th>
+<th scope="col" class="org-left">20e-3</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Henry</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">C</th>
+<th scope="col" class="org-left">1200e-6</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Farad</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">f</th>
+<th scope="col" class="org-left">30</th>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">Hertz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Xl</td>
+<td class="org-left">(0e0, 3.77e0)</td>
+<td class="org-left">(3.77e0; 90e0)</td>
+<td class="org-left">Ohm</td>
+</tr>
+
+<tr>
+<td class="org-left">Xc</td>
+<td class="org-left">(0e0, -4.42e0)</td>
+<td class="org-left">(4.42e0; -90e0)</td>
+<td class="org-left">Ohm</td>
+</tr>
+
+<tr>
+<td class="org-left">Z</td>
+<td class="org-left">(8.68e0, 3.39e0)</td>
+<td class="org-left">(9.32e0; 21.3e0)</td>
+<td class="org-left">Ohm</td>
+</tr>
+
+<tr>
+<td class="org-left">it</td>
+<td class="org-left">(20.0e0, -7.81e0)</td>
+<td class="org-left">(21.5e0; -21.3e0)</td>
+<td class="org-left">Ampère</td>
+</tr>
+
+<tr>
+<td class="org-left">ir</td>
+<td class="org-left">20</td>
+<td class="org-left">20</td>
+<td class="org-left">Ampère</td>
+</tr>
+
+<tr>
+<td class="org-left">il</td>
+<td class="org-left">(0e0, -53.1e0)</td>
+<td class="org-left">(53.1e0; -90e0)</td>
+<td class="org-left">Ampère</td>
+</tr>
+
+<tr>
+<td class="org-left">ic</td>
+<td class="org-left">(0e0, 45.2e0)</td>
+<td class="org-left">(45.2e0; 90e0)</td>
+<td class="org-left">Ampère</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Rahul Martim Juliato</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
