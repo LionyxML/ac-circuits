@@ -20,7 +20,7 @@ Allows you to solve for impedance, current and voltage, both on rectangular and 
 
 ## Screenshots
 ![Example 1](img/example1.png)
-![Example 2](img/example1.png)
+![Example 2](img/example2.png)
 
 
 
