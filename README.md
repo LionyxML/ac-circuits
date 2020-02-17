@@ -8,8 +8,8 @@ Tested under Linux, Windows 10 and MacOS Catalina.
 
 ## Features
 Allows you to solve for impedance, current and voltage, both on rectangular and polar forms on the following classic circuits:
-- Pure resistive
-- Pure inductive 
+- Pure Resistive
+- Pure Inductive 
 - Pure Capacitive
 - RL Series
 - RC Series
