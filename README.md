@@ -19,5 +19,8 @@ Allows you to solve for impedance, current and voltage, both on rectangular and 
 - RLC Parallel
 
 ## Screenshots
-![Demo](img/full.png)
+![Example 1](img/example1.png)
+![Example 2](img/example1.png)
+
+
 
