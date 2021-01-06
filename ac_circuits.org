@@ -5,9 +5,9 @@
 
 #+BEGIN_SRC
 
-Valid Inputs are in the form of:
+Valid complex inputs are in the form of:
 
-(Modulus ; Angle)
+(Modulus ; Angle_in_Degrees)
 (Real   , Imaginary)
 
 C-c C-c over the # formula bellow the table evals this table only

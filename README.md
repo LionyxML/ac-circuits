@@ -2,6 +2,10 @@
 
 It's a .org file you can use within emacs to solve basic monophasic AC circuits
 
+Simple enter circuit basic parameters in the complex form (rectangular or polar) and eval the circuit or the entire file.
+
+You can export it into an html, such as in here: [exported_html](./ac_circuits.html)
+
 Requires: emacs + org-mode + calc (all built-in on modern emacs)
 
 Tested under Linux, Windows 10 and MacOS Catalina.
