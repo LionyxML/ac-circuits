@@ -160,6 +160,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -184,7 +197,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -231,28 +244,24 @@ for the JavaScript code in this tag.
 <h1 class="title">Basic AC Electrical Circuits</h1>
 <pre class="example">
 
-Valid Inputs are in the form of:
+Valid complex inputs are in the form of:
 
-(Modulus ; Angle)
+(Modulus ; Angle_in_Degrees)
 (Real   , Imaginary)
 
-# C-c C-c over the # formula bellow the table evals this table only
-# C-u C-c C-c evals the entire file
+C-c C-c over the # formula bellow the table evals this table only
+C-u C-c C-c evals the entire file
 
 </pre>
 
-<div id="outline-container-orgc9f6d6c" class="outline-2">
-<h2 id="orgc9f6d6c"><span class="section-number-2">1</span> Basic Circuit     - R</h2>
+<div id="outline-container-org0ecce1f" class="outline-2">
+<h2 id="org0ecce1f"><span class="section-number-2">1</span> Basic Circuit     - R</h2>
 <div class="outline-text-2" id="text-1">
-<pre class="example">
- +---------------VVVVV-----+
- |                 R       |
- |                         |
-(~)Ut                      |
- |                         |
- |                         |
- +-------------------------+
-</pre>
+
+<div class="figure">
+<p><img src="./img_circuits/01.PNG" alt="01.PNG" />
+</p>
+</div>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -300,18 +309,14 @@ Valid Inputs are in the form of:
 </div>
 </div>
 
-<div id="outline-container-org7ef83d4" class="outline-2">
-<h2 id="org7ef83d4"><span class="section-number-2">2</span> Basic Circuit     - L</h2>
+<div id="outline-container-orgf000bfe" class="outline-2">
+<h2 id="orgf000bfe"><span class="section-number-2">2</span> Basic Circuit     - L</h2>
 <div class="outline-text-2" id="text-2">
-<pre class="example">
- +----------------OOOOO----+
- |                  L      |
- |                         |
-(~)Ut                      |
- |                         |
- |                         |
- +-------------------------+
-</pre>
+
+<div class="figure">
+<p><img src="./img_circuits/02.PNG" alt="02.PNG" />
+</p>
+</div>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -366,18 +371,14 @@ Valid Inputs are in the form of:
 </div>
 </div>
 
-<div id="outline-container-org03ae738" class="outline-2">
-<h2 id="org03ae738"><span class="section-number-2">3</span> Basic Circuit     - C</h2>
+<div id="outline-container-orgbb5be5e" class="outline-2">
+<h2 id="orgbb5be5e"><span class="section-number-2">3</span> Basic Circuit     - C</h2>
 <div class="outline-text-2" id="text-3">
-<pre class="example">
- +-----------------|  |----+
- |                  C      |
- |                         |
-(~)Ut                      |
- |                         |
- |                         |
- +-------------------------+
-</pre>
+
+<div class="figure">
+<p><img src="./img_circuits/03.PNG" alt="03.PNG" />
+</p>
+</div>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -432,18 +433,14 @@ Valid Inputs are in the form of:
 </div>
 </div>
 
-<div id="outline-container-org06c8660" class="outline-2">
-<h2 id="org06c8660"><span class="section-number-2">4</span> Series Circuit    - RL</h2>
+<div id="outline-container-orge829677" class="outline-2">
+<h2 id="orge829677"><span class="section-number-2">4</span> Series Circuit    - RL</h2>
 <div class="outline-text-2" id="text-4">
-<pre class="example">
- +------VVVVV-----OOOOO----+
- |        R         L      |
- |                         |
-(~)Ut                      |
- |                         |
- |                         |
- +-------------------------+
-</pre>
+
+<div class="figure">
+<p><img src="./img_circuits/04.PNG" alt="04.PNG" />
+</p>
+</div>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -526,18 +523,14 @@ Valid Inputs are in the form of:
 </div>
 </div>
 
-<div id="outline-container-org85a8db4" class="outline-2">
-<h2 id="org85a8db4"><span class="section-number-2">5</span> Series Circuit    - RC</h2>
+<div id="outline-container-orgbbd0e53" class="outline-2">
+<h2 id="orgbbd0e53"><span class="section-number-2">5</span> Series Circuit    - RC</h2>
 <div class="outline-text-2" id="text-5">
-<pre class="example">
- +------VVVVV------|  |----+
- |        R         C      |
- |                         |
-(~)Ut                      |
- |                         |
- |                         |
- +-------------------------+
-</pre>
+
+<div class="figure">
+<p><img src="./img_circuits/05.PNG" alt="05.PNG" />
+</p>
+</div>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -620,18 +613,14 @@ Valid Inputs are in the form of:
 </div>
 </div>
 
-<div id="outline-container-org5a22481" class="outline-2">
-<h2 id="org5a22481"><span class="section-number-2">6</span> Series Circuit    - RLC</h2>
+<div id="outline-container-org0437e25" class="outline-2">
+<h2 id="org0437e25"><span class="section-number-2">6</span> Series Circuit    - RLC</h2>
 <div class="outline-text-2" id="text-6">
-<pre class="example">
- +------VVVVV---OOOOO---|  |----+
- |        R       L      C      |
- |                              |
-(~)Ut                           |
- |                              |
- |                              |
- +------------------------------+
-</pre>
+
+<div class="figure">
+<p><img src="./img_circuits/06.PNG" alt="06.PNG" />
+</p>
+</div>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -735,21 +724,14 @@ Valid Inputs are in the form of:
 </div>
 </div>
 
-<div id="outline-container-orgdad0546" class="outline-2">
-<h2 id="orgdad0546"><span class="section-number-2">7</span> Parallel Circuit  - RL</h2>
+<div id="outline-container-orge94885f" class="outline-2">
+<h2 id="orge94885f"><span class="section-number-2">7</span> Parallel Circuit  - RL</h2>
 <div class="outline-text-2" id="text-7">
-<pre class="example">
-	  L
- +------OOOOO----+         
- |               |
- +------VVVVV----+
- |        R      |
- |               |
-(~)Ut            |
- |               |
- |               |
- +---------------+
-</pre>
+
+<div class="figure">
+<p><img src="./img_circuits/07.PNG" alt="07.PNG" />
+</p>
+</div>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -832,21 +814,14 @@ Valid Inputs are in the form of:
 </div>
 </div>
 
-<div id="outline-container-org0eb297d" class="outline-2">
-<h2 id="org0eb297d"><span class="section-number-2">8</span> Parallel Circuit  - RC</h2>
+<div id="outline-container-org21fb657" class="outline-2">
+<h2 id="org21fb657"><span class="section-number-2">8</span> Parallel Circuit  - RC</h2>
 <div class="outline-text-2" id="text-8">
-<pre class="example">
-	   C
- +--------|  |-----+ 
- |                 |
- +------VVVVV------+
- |        R        |
- |                 |
-(~)Ut              |
- |                 |
- |                 |
- +-----------------+
-</pre>
+
+<div class="figure">
+<p><img src="./img_circuits/08.PNG" alt="08.PNG" />
+</p>
+</div>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -929,23 +904,14 @@ Valid Inputs are in the form of:
 </div>
 </div>
 
-<div id="outline-container-orgef62513" class="outline-2">
-<h2 id="orgef62513"><span class="section-number-2">9</span> Parallel Circuit  - RLC</h2>
+<div id="outline-container-org8ee24de" class="outline-2">
+<h2 id="org8ee24de"><span class="section-number-2">9</span> Parallel Circuit  - RLC</h2>
 <div class="outline-text-2" id="text-9">
-<pre class="example">
-       C
- +-------|  |----+
- |     L         |
- +------OOOOO----+         
- |               |
- +------VVVVV----+
- |     R         |
- |               |
-(~)Ut            |
- |               |
- |               |
- +---------------+
-</pre>
+
+<div class="figure">
+<p><img src="./img_circuits/09.PNG" alt="09.PNG" />
+</p>
+</div>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 

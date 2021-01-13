@@ -2,7 +2,7 @@
 
 It's a .org file you can use within emacs to solve basic monophasic AC circuits
 
-Simple enter circuit basic parameters in the complex form (rectangular or polar) and eval the circuit or the entire file.
+Enter  the circuit basic parameters in the complex form (rectangular or polar) and eval the circuit or the entire file.
 
 You can export it into an html, such as in here: [exported_html](./ac_circuits.html)
 
@@ -23,10 +23,7 @@ Allows you to solve for impedance, current and voltage, both on rectangular and 
 - RLC Parallel
 
 ## Screenshots
-
 ![Example 1](img/example1.png)
-
-![Example 2](img/example2.png)
 
 
 
